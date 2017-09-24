@@ -7,6 +7,7 @@ from flask_pymongo import PyMongo
 from datetime import datetime
 
 app = Flask(__name__)
+app.config['MONGO_URI'] = "mongodb://heroku_hc1qh86r:c0gq97o2ehe6jcltmb97c7t2u1@ds147864.mlab.com:47864/heroku_hc1qh86r"
 mongo = PyMongo(app)
 
 @app.route('/')
@@ -16,6 +17,7 @@ def homepage():
     return """
     <h1>Hello heroku</h1>
     <p>It is currently {time}.</p>
+    <p>MONGO_URI mongodb://heroku_hc1qh86r:c0gq97o2ehe6jcltmb97c7t2u1@ds147864.mlab.com:47864/heroku_hc1qh86r.</p>
 
     <img src="http://loremflickr.com/600/400">
     """.format(time=time)
