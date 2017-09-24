@@ -18,7 +18,7 @@ def homepage():
     <p>It is currently {time}.</p>
 
     <img src="http://loremflickr.com/600/400">
-    """.format(time=the_time)
+    """.format(time=time)
 
 @app.route('/locations', methods=['POST'])
 def locations():
