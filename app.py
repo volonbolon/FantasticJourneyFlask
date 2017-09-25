@@ -27,7 +27,7 @@ def locations():
     payload = request.get_json()
 
     payload["timestamp"] = datetime.now()
-    payload["departure"] = datetime.fromtimestamp(payload["departure"].strftime("%c"))
+    payload["departure"] = datetime.fromtimestamp(payload["departure"]).strftime("%c")
 
     locations = mongo.db.locations
     try:
