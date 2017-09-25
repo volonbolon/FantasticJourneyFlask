@@ -28,6 +28,7 @@ def locations():
 
     payload["timestamp"] = datetime.now()
     payload["departure"] = datetime.fromtimestamp(payload["departure"])
+    payload["arrival"] = datetime.fromtimestamp(payload["arrival"])
 
     locations = mongo.db.locations
     try:
