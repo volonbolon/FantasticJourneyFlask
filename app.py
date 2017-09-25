@@ -26,8 +26,7 @@ def homepage():
 def locations():
     payload = request.get_json()
 
-    print(payload)
-    print(app.name)
+    payload["timestamp"] = datetime.now()
 
     locations = mongo.db.locations
     try:
